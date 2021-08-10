@@ -8,3 +8,8 @@ type Query {
    todos: [ Todo ]
    todo(id: ID!): Todo
 }
+
+type Subscription {
+   todos: [ Todo ]
+   @aws_subscribe(mutations: ["createTodo"])
+}

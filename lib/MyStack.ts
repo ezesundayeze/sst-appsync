@@ -6,9 +6,11 @@ export default class MyStack extends sst.Stack {
 
     // Create the AppSync GraphQL API
     const api = new sst.AppSyncApi(this, "AppSyncApi", {
+
       graphqlApi: {
         schema: "src/schema.graphql",
       },
+
 
       dataSources: {
         notes: "src/main.handler",
@@ -21,6 +23,7 @@ export default class MyStack extends sst.Stack {
         "Mutation deleteNote": "notes",
       },
     });
+
 
     // Show the AppSync API Id in the output
     this.addOutputs({
